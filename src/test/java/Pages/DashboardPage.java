@@ -32,7 +32,7 @@ public class DashboardPage {
 
     public void verifyHomeContent(){
 
-        driver.findElement(welcomePage_xpath).isDisplayed();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(welcomePage_xpath)).isDisplayed();
     }
 
     public void clickLearnDropdownButton(){

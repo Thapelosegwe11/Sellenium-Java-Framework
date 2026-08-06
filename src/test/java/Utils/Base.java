@@ -1,8 +1,6 @@
 package Utils;
 
-import Pages.DashboardPage;
-import Pages.Homepage;
-import Pages.LoginFormPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
@@ -17,6 +15,8 @@ public class Base {
     public Homepage homepage;
     public LoginFormPage loginFormPage;
     public DashboardPage dashboardPage;
+    public LearningMaterialPage learningMaterialPage;
+    public BasicFormPage basicFormPage;
 
     @BeforeMethod
     public void setUp() {
@@ -27,6 +27,9 @@ public class Base {
         homepage = PageFactory.initElements(driver, Homepage.class);
         loginFormPage = PageFactory.initElements(driver, LoginFormPage.class);
         dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
+
+
 
         // 3. Log in — right here, using the methods you already built
         homepage.clickMainLoginButton();

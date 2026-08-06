@@ -13,6 +13,7 @@ public class BasicFormTests extends Base {
     public void NavigateToLearningMaterials(){
         dashboardPage.clickLearnDropdownButton();
         dashboardPage.clickLearningMaterial();
+        learningMaterialPage.clickBasicFormButton();
     }
 
 }
