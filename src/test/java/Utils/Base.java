@@ -1,0 +1,44 @@
+package Utils;
+
+import Pages.DashboardPage;
+import Pages.Homepage;
+import Pages.LoginFormPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+public class Base {
+
+    public static final BrowserFactory factory = new BrowserFactory();
+
+    public WebDriver driver;
+
+    public Homepage homepage;
+    public LoginFormPage loginFormPage;
+    public DashboardPage dashboardPage;
+
+    @BeforeMethod
+    public void setUp() {
+        // 1. Open the browser
+        driver = factory.launchBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app/");
+
+        // 2. Set up the pages
+        homepage = PageFactory.initElements(driver, Homepage.class);
+        loginFormPage = PageFactory.initElements(driver, LoginFormPage.class);
+        dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+
+        // 3. Log in — right here, using the methods you already built
+        homepage.clickMainLoginButton();
+        loginFormPage.enterUsername("segwe.bz@gmail.com");
+        loginFormPage.enterPassword("rA!ny@$14");
+        loginFormPage.clickSubmit();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
