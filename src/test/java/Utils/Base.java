@@ -28,6 +28,7 @@ public class Base {
         loginFormPage = PageFactory.initElements(driver, LoginFormPage.class);
         dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
         learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
+        BasicFormPage basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
 
 
 

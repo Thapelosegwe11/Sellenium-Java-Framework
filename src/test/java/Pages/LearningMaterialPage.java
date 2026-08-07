@@ -18,7 +18,7 @@ public class LearningMaterialPage {
     //Constructor
     public LearningMaterialPage(WebDriver driver){
          this.driver = driver;
-         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
      }
 
      //2.Page elements

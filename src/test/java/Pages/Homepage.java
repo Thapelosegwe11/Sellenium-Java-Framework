@@ -19,7 +19,7 @@ public class Homepage {
     public Homepage(WebDriver driver){
 
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     //3. Define all my page elements.
