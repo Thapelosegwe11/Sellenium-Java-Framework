@@ -28,31 +28,31 @@ public class BasicFormPage {
     By fullNameInput_element = By.id("name");
     By emailAddress_element = By.id("email");
     By ageInput_element = By.id("age");
-    Select genderDropdown = new Select(driver.findElement(By.id("age")));
-    Select countryDropdown = new Select(driver.findElement(By.id("country")));
-    Select experienceDropdown = new Select(driver.findElement(By.id("experience")));
+    By genderDropdown = By.id("gender");
+    By countryDropdown = By.id("country");
+    By experienceDropdown = By.id("experience");
 
     // Checkbox elements
 
-    WebElement pythonCheckbox = driver.findElement(By.id("skill-python"));
-    WebElement javaCheckbox = driver.findElement(By.id("skill-java"));
-    WebElement seleniumCheckbox = driver.findElement(By.id("skill-selenium"));
+    By pythonCheckbox = By.id("skill-python");
+    By javaCheckbox = By.id("skill-java");
+    By seleniumCheckbox = By.id("skill-selenium");
 
     //Comment Input element.
 
-    WebElement commentInput_element = driver.findElement(By.id("comments"));
+    By commentInput_element = By.id("comments");
 
     // Extra check boxes elements.
 
-    WebElement newsLetterSub_element = driver.findElement(By.id("newsletter"));
-    WebElement terms_element = driver.findElement(By.id("terms"));
+    By newsLetterSub_element = By.id("newsletter");
+    By terms_element = By.id("terms");
 
     //Alert Buttons elements
 
-    WebElement submitButton_element = driver.findElement(By.id("submit-btn"));
-    WebElement validateAlertButton_element = driver.findElement(By.id("validate-btn"));
-    WebElement testAlertButton_element = driver.findElement(By.id("alert-btn"));
-    WebElement successAlertButton_element = driver.findElement(By.id("success-alert-btn"));
+    By submitButton_element = By.id("submit-btn");
+    By validateAlertButton_element = By.id("validate-btn");
+    By testAlertButton_element = By.id("alert-btn");
+    By successAlertButton_element = By.id("success-alert-btn");
 
 
 
@@ -77,51 +77,60 @@ public class BasicFormPage {
     }
 
     public void selectGender(){
-        genderDropdown.selectByValue("male");
+        Select select = new Select(driver.findElement(genderDropdown));
+        select.selectByValue("male");
     }
 
     public void selectCountry(){
-        countryDropdown.selectByValue("south-africa");
+        Select select = new Select(driver.findElement(countryDropdown));
+        select.selectByValue("south-africa");
     }
 
     public void selectExperience(){
-        experienceDropdown.selectByValue("beginner");
+        Select select = new Select(driver.findElement(experienceDropdown));
+        select.selectByValue("intermediate");
     }
 
     public void tickJavaSkill(){
-        if(javaCheckbox.isSelected()){
-            javaCheckbox.click();
+        WebElement element = driver.findElement(javaCheckbox);
+        if(! element.isSelected()){
+            element.click();
         }
     }
 
     public void tickPythonSkill(){
-        if(pythonCheckbox.isSelected()) {
-            pythonCheckbox.click();
+        WebElement element = driver.findElement(pythonCheckbox);
+        if(!element.isSelected()) {
+            element.click();
         }
     }
 
     public void tickSeleniumSkill(){
-        if (seleniumCheckbox.isSelected()){
-        seleniumCheckbox.click();
+        WebElement element = driver.findElement(seleniumCheckbox);
+        if (! element.isSelected()){
+        element.click();
         }
     }
 
-    public void writeComment(){
-        commentInput_element.sendKeys("Test Automation is fun");
+    public void writeComment(String comment){
+
+        driver.findElement(commentInput_element).sendKeys(comment);
     }
 
     public void tickNewsLetterSubscribe(){
-        if (newsLetterSub_element.isSelected()){
-            newsLetterSub_element.click();
+        WebElement element = driver.findElement(newsLetterSub_element);
+        if (! element.isSelected()){
+            element.click();
         }
     }
 
     public void tickTerms(){
-        if (terms_element.isSelected()){
-            terms_element.click();
+        WebElement element = driver.findElement(terms_element);
+        if (! element.isSelected()){
+            element.click();
         }
     }
 
 
-
+    //Alert Buttons Methods
 }

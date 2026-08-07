@@ -3,7 +3,9 @@ package Utils;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 public class Base {
@@ -18,7 +20,7 @@ public class Base {
     public LearningMaterialPage learningMaterialPage;
     public BasicFormPage basicFormPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         // 1. Open the browser
         driver = factory.launchBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app/");
@@ -28,18 +30,18 @@ public class Base {
         loginFormPage = PageFactory.initElements(driver, LoginFormPage.class);
         dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
         learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
-        BasicFormPage basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
+        basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
 
 
 
-        // 3. Log in — right here, using the methods you already built
+        // 3. Log in  right here using the methods I already built
         homepage.clickMainLoginButton();
         loginFormPage.enterUsername("segwe.bz@gmail.com");
         loginFormPage.enterPassword("rA!ny@$14");
         loginFormPage.clickSubmit();
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();
