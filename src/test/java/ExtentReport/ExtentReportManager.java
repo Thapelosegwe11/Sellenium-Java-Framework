@@ -1,13 +1,18 @@
 package ExtentReport;
 
+import Utils.BrowserFactory;
+import Utils.Screenshots;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import static Utils.BrowserFactory.driver;
 
 public class ExtentReportManager implements ITestListener {
 
@@ -20,7 +25,7 @@ public class ExtentReportManager implements ITestListener {
     // Create the Report UI.
 
     public void onStart(ITestContext context){
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user-dir") + "Reports/NdosiTestReport.xml"); //SET REPORT PATH
+        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "Reports/NdosiTestReport.xml"); //SET REPORT PATH
         sparkReporter.config().setTheme(Theme.STANDARD);
         sparkReporter.config().setDocumentTitle("Ndosi-Web Automation");
         sparkReporter.config().setReportName("Functional Test");
@@ -30,7 +35,7 @@ public class ExtentReportManager implements ITestListener {
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         extent.setSystemInfo("OS",System.getProperty("os.name"));
-        extent.setSystemInfo("Execution Machine",System.getProperty("user-name"));
+        extent.setSystemInfo("Execution Machine",System.getProperty("user.name"));
         extent.setSystemInfo("Browser","Chrome");
         extent.setSystemInfo("Test Environment","Staging");
 
@@ -41,6 +46,7 @@ public class ExtentReportManager implements ITestListener {
         test = extent.createTest(result.getName());
         test.log(Status.FAIL,"Test Case " + result.getMethod().getMethodName());
         test.log(Status.FAIL,result.getThrowable());
+        test.addScreenCaptureFromBase64String(Screenshots.takeSnapShot(driver), result.getName());
     }
 
     @Override

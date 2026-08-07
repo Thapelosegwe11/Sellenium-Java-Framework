@@ -47,10 +47,19 @@ public class BasicFormPage {
     By newsLetterSub_element = By.id("newsletter");
     By terms_element = By.id("terms");
 
-    //Alert Buttons elements
+    // page Buttons elements
 
-    By submitButton_element = By.id("submit-btn");
     By validateAlertButton_element = By.id("validate-btn");
+    By submitFormButton_element = By.id("submit-btn");
+
+    // Submissions view elements
+
+    By submissionsButton_element = By.id("submissions-toggle-btn");
+    By viewSubmissionsButton_element = By.id("view-submission-0");
+
+
+    //Alerts to handle on page
+
     By testAlertButton_element = By.id("alert-btn");
     By successAlertButton_element = By.id("success-alert-btn");
 
@@ -124,12 +133,32 @@ public class BasicFormPage {
         }
     }
 
-    public void tickTerms(){
+    public void tickTermsAndConditions(){
         WebElement element = driver.findElement(terms_element);
         if (! element.isSelected()){
             element.click();
         }
     }
+
+
+    public void checkValidateButton(){
+        driver.findElement(validateAlertButton_element).click();
+    }
+
+    public void checkSubmitForm(){
+        driver.findElement(submitFormButton_element).click();
+    }
+
+    public void checkSubmissions(){
+        driver.findElement(submissionsButton_element).click();
+    }
+
+    public void checkViewSubmission(){
+        driver.findElement(viewSubmissionsButton_element).click();
+    }
+
+
+
 
 
     //Alert Buttons Methods

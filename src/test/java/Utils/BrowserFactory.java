@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class BrowserFactory {
 
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static WebDriver launchBrowser(String browserChoice, String url){
 
@@ -36,7 +36,7 @@ public class BrowserFactory {
 
         driver.manage().window().maximize();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+     //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         return driver;
     }

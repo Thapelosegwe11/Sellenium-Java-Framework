@@ -13,12 +13,13 @@ public class Base {
     public static final BrowserFactory factory = new BrowserFactory();
 
     public WebDriver driver;
-
     public Homepage homepage;
     public LoginFormPage loginFormPage;
     public DashboardPage dashboardPage;
     public LearningMaterialPage learningMaterialPage;
     public BasicFormPage basicFormPage;
+
+
 
     @BeforeClass
     public void setUp() {
@@ -32,13 +33,6 @@ public class Base {
         learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
         basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
 
-
-
-        // 3. Log in  right here using the methods I already built
-        homepage.clickMainLoginButton();
-        loginFormPage.enterUsername("segwe.bz@gmail.com");
-        loginFormPage.enterPassword("rA!ny@$14");
-        loginFormPage.clickSubmit();
     }
 
     @AfterClass

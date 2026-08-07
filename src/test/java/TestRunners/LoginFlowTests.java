@@ -8,20 +8,18 @@ import org.testng.annotations.Test;
 
 public class LoginFlowTests extends Base {
 
-    @Test(priority = 1)
+    @Test
     public void verifyHomeContentTest(){
         homepage.verifyHomeScreenContent();
         homepage.clickMainLoginButton();
     }
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "verifyHomeContentTest")
     public void loginFlowTest(){
-       loginFormPage.enterUsername("segwe.bz@gmail.com");
-       loginFormPage.enterPassword("rA!ny@$14");
-       loginFormPage.clickSubmit();
+       loginFormPage.loginToWebsite("Segwe.bz@gmail.com", "rA!ny@$14");
     }
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = "loginFlowTest")
     public void verifyLandingPage(){
         dashboardPage.verifyHomeContent();
     }
