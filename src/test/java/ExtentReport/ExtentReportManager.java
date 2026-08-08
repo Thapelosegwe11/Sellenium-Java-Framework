@@ -24,6 +24,7 @@ public class ExtentReportManager implements ITestListener {
 
     // Create the Report UI.
 
+    @Override
     public void onStart(ITestContext context){
         sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "Reports/NdosiTestReport.xml"); //SET REPORT PATH
         sparkReporter.config().setTheme(Theme.STANDARD);

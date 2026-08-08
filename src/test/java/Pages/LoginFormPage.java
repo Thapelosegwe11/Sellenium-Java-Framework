@@ -24,24 +24,10 @@ public class LoginFormPage {
 
     //4.Create descriptive methods.
 
-    public void loginToWebsite(String username, String password){
+    public void loginToWebsite(String username, String password) {
         driver.findElement(username_id).sendKeys();
         driver.findElement(password_id).sendKeys(password);
         driver.findElement(loginButton_name).click();
 
-    }
-    public  void enterUsername(String username){
-
-        driver.findElement(username_id).sendKeys(username);
-    }
-
-    public void enterPassword(String password){
-
-        driver.findElement(password_id).sendKeys(password);
-    }
-
-    public void clickSubmit(){
-
-        driver.findElement(loginButton_name).click();
     }
 }

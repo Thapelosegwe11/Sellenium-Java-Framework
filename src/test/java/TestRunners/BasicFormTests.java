@@ -9,7 +9,7 @@ public class BasicFormTests extends Base {
 
 
 
-    @Test()
+    @Test
     public void LoginViaTestUser() {
         loginFormPage.loginToWebsite("segwe.bz@gmail.com", "rA!ny@$14");
 
@@ -25,7 +25,6 @@ public class BasicFormTests extends Base {
 
     @Test(dependsOnMethods = "NavigateToLearningMaterials")
     public void EnterFullName() {
-
         basicFormPage.enterFullname("John Doe");
     }
 
@@ -41,6 +40,7 @@ public class BasicFormTests extends Base {
 
     @Test(dependsOnMethods = "EnterAge")
     public void SelectGender() {
+
         basicFormPage.selectGender();
     }
 

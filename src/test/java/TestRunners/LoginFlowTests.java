@@ -1,12 +1,16 @@
 package TestRunners;
 
+import TestData.readFromDataBase;
 import Utils.Base;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginFlowTests extends Base {
+
+    @BeforeClass
+    public void setup(){
+         readFromDataBase.dbConnector();
+    }
 
     @Test
     public void verifyHomeContentTest(){
@@ -16,7 +20,7 @@ public class LoginFlowTests extends Base {
 
     @Test(dependsOnMethods = "verifyHomeContentTest")
     public void loginFlowTest(){
-       loginFormPage.loginToWebsite("Segwe.bz@gmail.com", "rA!ny@$14");
+       loginFormPage.loginToWebsite(readFromDataBase.getUsername, readFromDataBase.getPassword);
     }
 
     @Test(dependsOnMethods = "loginFlowTest")
