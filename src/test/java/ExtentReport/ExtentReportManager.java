@@ -26,7 +26,7 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onStart(ITestContext context){
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "Reports/NdosiTestReport.xml"); //SET REPORT PATH
+        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/Reports/NdosiTestReport.xml"); //SET REPORT PATH
         sparkReporter.config().setTheme(Theme.STANDARD);
         sparkReporter.config().setDocumentTitle("Ndosi-Web Automation");
         sparkReporter.config().setReportName("Functional Test");
@@ -36,7 +36,7 @@ public class ExtentReportManager implements ITestListener {
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         extent.setSystemInfo("OS",System.getProperty("os.name"));
-        extent.setSystemInfo("Execution Machine",System.getProperty("user.name"));
+        extent.setSystemInfo("Execution Machine",System.getProperty("user-name"));
         extent.setSystemInfo("Browser","Chrome");
         extent.setSystemInfo("Test Environment","Staging");
 

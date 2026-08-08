@@ -142,19 +142,23 @@ public class BasicFormPage {
 
 
     public void checkValidateButton(){
-        driver.findElement(validateAlertButton_element).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(validateAlertButton_element)).click();
     }
 
     public void checkSubmitForm(){
-        driver.findElement(submitFormButton_element).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(submitFormButton_element)).click();
     }
 
     public void checkSubmissions(){
-        driver.findElement(submissionsButton_element).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(submissionsButton_element)).click();
     }
 
     public void checkViewSubmission(){
-        driver.findElement(viewSubmissionsButton_element).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(viewSubmissionsButton_element)).click();
     }
 
 

@@ -4,22 +4,35 @@
     <listeners>
         <listener class-name="ExtentReport.ExtentReportManager"></listener>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/THAPELO SEGWE/Desktop/NdosiProject/MyProjects/SelleniumJava"><classes>
-        <class name="TestRunners.LoginFlowTests">
-            <methods>
-            <include name="verifyHomeContentTest"/>
-            <include name="loginFlowTest"/>
-            <include name="verifyLandingPage"/>
-            </methods>
-        </class>
-        <class name="TestRunners.BasicFormTests">
-            <methods>
-                <include name="NavigateToLearningMaterials"/>
-                <include name="EnterDetails"/>
-                <include name="SelectDropdowns"/>
-                <include name="CheckSkillBoxes"/>
-            </methods></class>
-
-    </classes>
+    <test verbose="2" preserve-order="true" name="C:/Users/THAPELO SEGWE/Desktop/NdosiProject/MyProjects/SelleniumJava">
+        <classes>
+            <class name="TestRunners.LoginFlowTests">
+                <methods>
+                    <include name="verifyHomeContentTest"/>
+                    <include name="loginFlowTest"/>
+                    <include name="verifyLandingPage"/>
+                </methods>
+            </class>
+            <class name="TestRunners.BasicFormTests">
+                <methods>
+                    <include name="LoginViaTestUser"/>
+                    <include name="NavigateToLearningMaterials"/>
+                    <include name="EnterFullName"/>
+                    <include name="EnterEmail"/>
+                    <include name="EnterAge"/>
+                    <include name="SelectGender"/>
+                    <include name="SelectCountry"/>
+                    <include name="SelectExperience"/>
+                    <include name="CheckSkills"/>
+                    <include name="EnterComments"/>
+                    <include name="CheckSubscribeToNewsLetter"/>
+                    <include name="CheckAcceptTermsAndConditions"/>
+                    <include name="ClickValidateButton"/>
+                    <include name="ClickSubmitForm"/>
+                    <include name="ClickSubmissionsButton"/>
+                    <include name="ClickViewOnSubmission"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>

@@ -1,5 +1,6 @@
 package TestRunners;
 
+import TestData.readFromDataBase;
 import Utils.Base;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,7 +12,9 @@ public class BasicFormTests extends Base {
 
     @Test
     public void LoginViaTestUser() {
-        loginFormPage.loginToWebsite("segwe.bz@gmail.com", "rA!ny@$14");
+        homepage.verifyHomeScreenContent();
+        homepage.clickMainLoginButton();
+        loginFormPage.loginToWebsite(readFromDataBase.getUsername,readFromDataBase.getPassword);
 
     }
 
