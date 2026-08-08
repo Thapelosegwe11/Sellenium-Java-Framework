@@ -19,7 +19,7 @@ public class BasicFormPage {
 
     public BasicFormPage(WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     //3.My page elements.
@@ -143,22 +143,25 @@ public class BasicFormPage {
 
     public void checkValidateButton(){
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(validateAlertButton_element)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(validateAlertButton_element)).click();
     }
 
     public void checkSubmitForm(){
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(submitFormButton_element)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(submitFormButton_element)).click();
     }
 
     public void checkSubmissions(){
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(submissionsButton_element)).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.xpath("//*[contains(text(),'Form Submitted')]")
+        ));
+        wait.until(ExpectedConditions.elementToBeClickable(submissionsButton_element)).click();
     }
 
     public void checkViewSubmission(){
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(viewSubmissionsButton_element)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(viewSubmissionsButton_element)).click();
     }
 
 
