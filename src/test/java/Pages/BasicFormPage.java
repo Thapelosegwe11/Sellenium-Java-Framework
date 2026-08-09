@@ -162,10 +162,8 @@ public class BasicFormPage {
     public void checkViewSubmission(){
 
         wait.until(ExpectedConditions.elementToBeClickable(viewSubmissionsButton_element)).click();
+
     }
-
-
-
 
 
     //Alert Buttons Methods
