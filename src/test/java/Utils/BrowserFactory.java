@@ -20,8 +20,8 @@ public class BrowserFactory {
         if (browserChoice.equalsIgnoreCase("cHroMe")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
-            //Headless for git pipeline switch On when I want to run pipeline
-            //         options.addArguments("--headless=new");
+            //Headless for git pipeline switch On when I want to run in pipeline turn off for local testing purposes.
+            options.addArguments("--headless=new");
             driver = new ChromeDriver(options);
 
         }else if (browserChoice.equalsIgnoreCase("Firefox")){
@@ -34,10 +34,10 @@ public class BrowserFactory {
             driver = new EdgeDriver();
         }
 
-        driver.manage().window().maximize();
+   //     driver.manage().window().maximize(); // for testing purpose locally
 
-  //      Dimensions for locator during headless run in pipeline tur on when I want to run pipeline.
-  //      driver.manage().window().setSize(new Dimension(1920,1080));
+  //      Dimensions for locator during headless run in pipeline turn on when I want to run in pipeline.
+        driver.manage().window().setSize(new Dimension(1920,1080));
 
         driver.get(url);
 
