@@ -101,6 +101,7 @@ public class BasicFormTests extends Base {
 
     @Test(dependsOnMethods = "ClickViewOnSubmission")
     public void VerifySubmissionRecordPage(){
+        submissionsRecordPage.switchToNewTab();
         submissionsRecordPage.verifyPageLoaded();
         submissionsRecordPage.scrollToBottom();
     }

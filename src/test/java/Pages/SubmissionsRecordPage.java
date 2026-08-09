@@ -29,6 +29,17 @@ public class SubmissionsRecordPage {
 
     //my methods.
 
+    public void switchToNewTab(){
+        String originalWindow = driver.getWindowHandle();
+
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!windowHandle.equals(originalWindow)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+    }
+
     public void verifyPageLoaded(){
             wait.until(ExpectedConditions.visibilityOfElementLocated(pageTitle_element)).isDisplayed();
         }
