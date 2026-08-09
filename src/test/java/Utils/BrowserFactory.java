@@ -34,9 +34,9 @@ public class BrowserFactory {
             driver = new EdgeDriver();
         }
 
-   //     driver.manage().window().maximize(); // for testing purpose locally
+        driver.manage().window().maximize(); // for testing purpose locally
 
-  //      Dimensions for locator during headless run in pipeline turn on when I want to run in pipeline.
+  //      Dimensions for locator during headless run in pipeline.
         driver.manage().window().setSize(new Dimension(1920,1080));
 
         driver.get(url);

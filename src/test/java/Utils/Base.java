@@ -18,6 +18,7 @@ public class Base {
     public DashboardPage dashboardPage;
     public LearningMaterialPage learningMaterialPage;
     public BasicFormPage basicFormPage;
+    public SubmissionsRecordPage submissionsRecordPage;
 
 
 
@@ -32,6 +33,7 @@ public class Base {
         dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
         learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
         basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
+        submissionsRecordPage = PageFactory.initElements(driver, SubmissionsRecordPage.class);
 
     }
 

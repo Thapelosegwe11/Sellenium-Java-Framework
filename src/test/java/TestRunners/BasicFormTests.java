@@ -99,6 +99,12 @@ public class BasicFormTests extends Base {
         basicFormPage.checkViewSubmission();
     }
 
+    @Test(dependsOnMethods = "ClickViewOnSubmission")
+    public void VerifySubmissionRecordPage(){
+        submissionsRecordPage.verifyPageLoaded();
+        submissionsRecordPage.scrollToBottom();
+    }
+
 
 
 }
