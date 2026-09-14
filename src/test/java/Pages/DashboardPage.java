@@ -27,6 +27,9 @@ public class DashboardPage {
     By welcomePage_xpath = By.xpath("//h2");
     By learnDropdownButton_xpath = By.className("nav-dropdown-trigger");
     By learningMaterial_xpath = By.xpath("//button[contains(@class,'nav-dropdown-item')][.//span[normalize-space()='Learning Materials']]");
+    By menuButton_element = By.xpath("//span[contains(text(),'Menu')]");
+    By myProfile_element = By.xpath("//span[contains(text(),'My Profile')]");
+
 
     //4. Descriptive methods.
 
@@ -45,6 +48,14 @@ public class DashboardPage {
        wait.until(ExpectedConditions.elementToBeClickable(learningMaterial_xpath)).click();
     }
 
+    public void clickMenuButton(){
+
+        wait.until(ExpectedConditions.elementToBeClickable(menuButton_element)).click();
+    }
+
+    public void clickOnMyProfile(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(myProfile_element)).click();
+    }
 
 }
 

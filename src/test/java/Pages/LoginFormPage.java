@@ -31,9 +31,15 @@ public class LoginFormPage {
     //4.Create descriptive methods.
 
     public void loginToWebsite(String username, String password) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(username_id)).sendKeys(username);
-        driver.findElement(password_id).sendKeys(password);
-        driver.findElement(loginButton_name).click();
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(username_id)).sendKeys(username);
+
+        driver.findElement(password_id).sendKeys(password);
+
+        driver.findElement(loginButton_name).click();
+    }
+
+    public void clickSubmit(){
+        driver.findElement(loginButton_name).click();
     }
 }

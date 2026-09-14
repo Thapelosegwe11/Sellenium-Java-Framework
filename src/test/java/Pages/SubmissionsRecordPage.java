@@ -30,6 +30,7 @@ public class SubmissionsRecordPage {
     //my methods.
 
     public void switchToNewTab() {
+
         String originalWindow = driver.getWindowHandle();
 
         for (String windowHandle : driver.getWindowHandles()) {

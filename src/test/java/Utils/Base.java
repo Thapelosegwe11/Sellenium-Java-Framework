@@ -8,6 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.sql.Driver;
+
 public class Base {
 
     public static final BrowserFactory factory = new BrowserFactory();
@@ -19,6 +21,7 @@ public class Base {
     public LearningMaterialPage learningMaterialPage;
     public BasicFormPage basicFormPage;
     public SubmissionsRecordPage submissionsRecordPage;
+    public MyProfilePage myProfilePage;
 
 
 
@@ -34,6 +37,7 @@ public class Base {
         learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
         basicFormPage = PageFactory.initElements(driver, BasicFormPage.class);
         submissionsRecordPage = PageFactory.initElements(driver, SubmissionsRecordPage.class);
+        myProfilePage = PageFactory.initElements(driver, MyProfilePage.class);
 
     }
 

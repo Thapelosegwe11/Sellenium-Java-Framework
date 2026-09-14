@@ -21,7 +21,7 @@ public class BrowserFactory {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             //Headless for git pipeline switch On when I want to run in pipeline turn off for local testing purposes.
-            options.addArguments("--headless=new");
+            //options.addArguments("--headless=new");
             driver = new ChromeDriver(options);
 
         }else if (browserChoice.equalsIgnoreCase("Firefox")){
