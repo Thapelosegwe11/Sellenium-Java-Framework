@@ -18,6 +18,7 @@ public class MyProfilePage {
     public MyProfilePage(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
     }
 
     //3.Page elements.

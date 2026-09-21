@@ -1,4 +1,4 @@
-package TestRunners;
+package TestCases;
 
 import TestData.readFromDataBase;
 import Utils.Base;
@@ -8,8 +8,9 @@ import org.testng.annotations.Test;
 public class LoginFlowTests extends Base {
 
     @BeforeClass
-    public void setup(){
-         readFromDataBase.dbConnector();
+    public static void setup() {
+
+        readFromDataBase.dbConnector();
     }
 
     @Test
@@ -20,14 +21,13 @@ public class LoginFlowTests extends Base {
 
     @Test(dependsOnMethods = "verifyHomeContentTest")
     public void loginFlowTest(){
-       loginFormPage.loginToWebsite(readFromDataBase.getUsername, readFromDataBase.getPassword);
+       loginFormPage.loginToWebsite(readFromDataBase.studentUsername, readFromDataBase.studentPassword);
     }
 
     @Test(dependsOnMethods = "loginFlowTest")
     public void verifyLandingPage(){
         dashboardPage.verifyHomeContent();
     }
-
 
 }
 

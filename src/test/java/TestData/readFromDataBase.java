@@ -6,8 +6,8 @@ import java.sql.*;
 
 public class readFromDataBase {
 
-    public static String getUsername;
-    public static String getPassword;
+    public static String studentUsername;
+    public static String studentPassword;
 
 
     public static void dbConnector() {
@@ -21,8 +21,8 @@ public class readFromDataBase {
                  ResultSet resultSet = statement.executeQuery("SELECT * FROM thaps_users WHERE id = 1")) {
 
                 while (resultSet.next()) {
-                    getUsername = resultSet.getString("email");
-                    getPassword = resultSet.getString("password");
+                    studentUsername = resultSet.getString("email");
+                    studentPassword = resultSet.getString("password");
                     //System.out.println("Email: " + getUsername + " password:" + getPassword);
                 }
 
@@ -31,4 +31,20 @@ public class readFromDataBase {
             System.out.println("Query Execution Error" + e.getMessage());
         }
     }
+
+//         try (Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword)) {
+//            try (Statement statement = connection.createStatement();
+//                 ResultSet resultSet = statement.executeQuery("SELECT * FROM thaps_users WHERE id = 2")) {
+//
+//                while (resultSet.next()) {
+//                    adminEmail = resultSet.getString("email");
+//                    adminPassword = resultSet.getString("password");
+//                    //System.out.println("Email: " + getUsername + " password:" + getPassword);
+//                }
+//
+//            }
+//        } catch (SQLException d) {
+//            System.out.println("Query Execution Error" + d.getMessage());
+//        }
+//    }
 }

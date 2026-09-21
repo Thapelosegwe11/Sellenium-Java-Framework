@@ -1,12 +1,17 @@
-package TestRunners;
+package TestCases;
 
 import TestData.readFromDataBase;
 import Utils.Base;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 public class BasicFormTests extends Base {
+
+    //Experimenting if the login error needs a setup for all test classes.uncomment to test.
+//    @BeforeClass
+//    public void fetchData(){
+//        LoginFlowTests.setup();
+//    }
 
 
 
@@ -14,7 +19,7 @@ public class BasicFormTests extends Base {
     public void LoginViaTestUser() {
         homepage.verifyHomeScreenContent();
         homepage.clickMainLoginButton();
-        loginFormPage.loginToWebsite(readFromDataBase.getUsername,readFromDataBase.getPassword);
+        loginFormPage.loginToWebsite(readFromDataBase.studentUsername,readFromDataBase.studentPassword);
 
     }
 
@@ -28,11 +33,13 @@ public class BasicFormTests extends Base {
 
     @Test(dependsOnMethods = "NavigateToLearningMaterials")
     public void EnterFullName() {
+
         basicFormPage.enterFullname("John Doe");
     }
 
     @Test(dependsOnMethods = "EnterFullName")
     public void EnterEmail() {
+
         basicFormPage.enterEmail("Example@Test.com");
     }
 

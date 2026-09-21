@@ -6,14 +6,14 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/THAPELO SEGWE/Desktop/NdosiProject/MyProjects/SelleniumJava">
         <classes>
-            <class name="TestRunners.LoginFlowTests">
+            <class name="TestCases.LoginFlowTests">
                 <methods>
                     <include name="verifyHomeContentTest"/>
                     <include name="loginFlowTest"/>
                     <include name="verifyLandingPage"/>
                 </methods>
             </class>
-            <class name="TestRunners.BasicFormTests">
+            <class name="TestCases.BasicFormTests">
                 <methods>
                     <include name="LoginViaTestUser"/>
                     <include name="NavigateToLearningMaterials"/>

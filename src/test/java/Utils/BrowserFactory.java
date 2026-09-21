@@ -18,19 +18,27 @@ public class BrowserFactory {
     public static WebDriver launchBrowser(String browserChoice, String url){
 
         if (browserChoice.equalsIgnoreCase("cHroMe")){
+
             ChromeOptions options = new ChromeOptions();
+
             options.addArguments("--incognito");
-            //Headless for git pipeline switch On when I want to run in pipeline turn off for local testing purposes.
+
+            //Headless for git pipeline switch ON when I want to run in pipeline turn OFF for local testing purposes.
+
             //options.addArguments("--headless=new");
+
             driver = new ChromeDriver(options);
 
         }else if (browserChoice.equalsIgnoreCase("Firefox")){
+
             driver = new FirefoxDriver();
 
         }else if (browserChoice.equalsIgnoreCase("Safari")){
+
             driver = new SafariDriver();
 
         }else {
+
             driver = new EdgeDriver();
         }
 
