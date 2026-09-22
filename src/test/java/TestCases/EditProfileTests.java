@@ -33,9 +33,9 @@ public class EditProfileTests extends Base {
 
        @Test
     public void uploadProfilePic(String filePath){
+       //filePath = "TestData.TheGoat.jpeg";
        myProfilePage.clickChoosePhoto();
-       driver.findElement(By.xpath("//input[@id='profilePicture']")).sendKeys(filePath
-       );
+       driver.findElement(By.xpath("//input[@id='profilePicture']")).sendKeys(filePath);
         }
    }
 

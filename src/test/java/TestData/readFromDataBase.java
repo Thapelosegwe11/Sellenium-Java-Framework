@@ -32,19 +32,4 @@ public class readFromDataBase {
         }
     }
 
-//         try (Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword)) {
-//            try (Statement statement = connection.createStatement();
-//                 ResultSet resultSet = statement.executeQuery("SELECT * FROM thaps_users WHERE id = 2")) {
-//
-//                while (resultSet.next()) {
-//                    adminEmail = resultSet.getString("email");
-//                    adminPassword = resultSet.getString("password");
-//                    //System.out.println("Email: " + getUsername + " password:" + getPassword);
-//                }
-//
-//            }
-//        } catch (SQLException d) {
-//            System.out.println("Query Execution Error" + d.getMessage());
-//        }
-//    }
 }
