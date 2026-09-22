@@ -33,8 +33,8 @@ public class MyProfilePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(EditProfile_element)).click();
     }
 
-    public void clickChoosePhoto(){
-        wait.until(ExpectedConditions.elementToBeClickable(ChoosePhoto_element)).click();
+    public void uploadProfilePic(String filePath){
+        driver.findElement(ChoosePhoto_element).sendKeys(filePath);
     }
 }
 

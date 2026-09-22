@@ -2,7 +2,6 @@ package TestCases;
 
 import TestData.readFromDataBase;
 import Utils.Base;
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -32,11 +31,10 @@ public class EditProfileTests extends Base {
        myProfilePage.clickEditProfile();
        }
 
-       @Test
-    public void uploadProfilePic(String filePath){
-       //filePath = "TestData.TheGoat.jpeg";
-       myProfilePage.clickChoosePhoto();
-       driver.findElement(By.xpath("//input[@id='profilePicture']")).sendKeys(filePath);
+       @Test(dependsOnMethods = "navigateToProfile")
+    public void uploadProfilePic() {
+       String filePath = getClass().getClassLoader().getResource("TheGoat.jpeg").getPath();
+       myProfilePage.uploadProfilePic(filePath);
         }
    }
 
