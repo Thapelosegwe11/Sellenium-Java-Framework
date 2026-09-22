@@ -2,16 +2,17 @@ package TestCases;
 
 import TestData.readFromDataBase;
 import Utils.Base;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 public class BasicFormTests extends Base {
 
     //Experimenting if the login error needs a setup for all test classes.uncomment to test.
-//    @BeforeClass
-//    public void fetchData(){
-//        LoginFlowTests.setup();
-//    }
+    @BeforeClass
+    public void fetchData(){
+        LoginFlowTests.setup();
+   }
 
 
 

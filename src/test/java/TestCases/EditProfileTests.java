@@ -3,16 +3,17 @@ package TestCases;
 import TestData.readFromDataBase;
 import Utils.Base;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 public class EditProfileTests extends Base {
 
 
-//   @BeforeClass
-//   public void fetchData(){
-//       LoginFlowTests.setup();
-//   }
+   @BeforeClass
+   public void fetchData(){
+       LoginFlowTests.setup();
+   }
 
    @Test
     public void loginViaUser() {
